@@ -10,7 +10,7 @@ namespace SourceTree
         static void Main(string[] args)
         {
             if (args == null || args.Length <= 0)
-                return;
+                args = new[] {Directory.GetCurrentDirectory()};
 
             var nodes = new List<TreeViewNode>();
             foreach (var arg in args.Where(arg => Directory.Exists(arg)))
